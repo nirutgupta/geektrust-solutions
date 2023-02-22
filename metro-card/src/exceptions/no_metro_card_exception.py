@@ -1,0 +1,2 @@
+class NoMetroCardFoundException(Exception):
+    pass

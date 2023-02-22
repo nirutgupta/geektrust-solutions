@@ -1,0 +1,2 @@
+class FundNotFoundException(Exception):
+    pass

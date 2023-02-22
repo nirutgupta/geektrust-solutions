@@ -1,0 +1,8 @@
+STOCK_DATA_URL = "https://geektrust.s3.ap-southeast-1.amazonaws.com/portfolio-overlap/stock_data.json"
+STOCK_DATA_FUNDS_ROOT_KEY = "funds"
+STOCK_DATA_FUNDS_FUND_NAME_KEY = "name"
+STOCK_DATA_FUNDS_FUND_STOCKS_KEY = "stocks"
+ROUND_PERCENT_TO_DECIMAL_PLACES = 2
+
+FUND_NOT_FOUND_ERROR = "FUND_NOT_FOUND"
+EXCLUDE_OVERLAP_PERCENT = 0

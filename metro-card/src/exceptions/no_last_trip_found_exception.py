@@ -1,0 +1,2 @@
+class NoLastTripFoundException(Exception):
+    pass

@@ -1,0 +1,7 @@
+class TravelCharges:
+    ADULT = 200
+    SENIOR_CITIZEN = 100
+    KID = 50
+
+
+AUTO_RECHARGE_FEES_IN_PERCENT = 2

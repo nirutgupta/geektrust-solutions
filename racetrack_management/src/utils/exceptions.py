@@ -1,0 +1,3 @@
+class RaceTrackFullException(Exception):
+    pass
+
