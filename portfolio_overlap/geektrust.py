@@ -1,10 +1,11 @@
 from sys import argv
 from src.facade import PortfolioOverlapFacade
+
+EXPECTED_ARGS = 2
 facade = PortfolioOverlapFacade()
 
 
 def main():
-    
     """
     Sample code to read inputs from the file
 
@@ -15,19 +16,14 @@ def main():
     Lines = f.readlines()
     //Add your code here to process the input commands
     """
-    if len(argv) != 2:
+    if len(argv) != EXPECTED_ARGS:
         raise Exception("File path not entered")
     file_path = argv[1]
     f = open(file_path, 'r')
     Lines = f.readlines()
     for line in Lines:
         command, *args = line.split()
-        if command == "CURRENT_PORTFOLIO":
-            facade.current_portfolio(args)
-        elif command == "CALCULATE_OVERLAP":
-            facade.calculate_overlap(*args)
-        else:
-            facade.add_stock(args[0], " ".join(args[1:]))
+        getattr(facade, command.lower())(*args)
 
 
 if __name__ == "__main__":

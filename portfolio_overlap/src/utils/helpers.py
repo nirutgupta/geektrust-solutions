@@ -7,4 +7,4 @@ def get_json_from_url(url):
 
 
 def limit_float_decimal_points(float_number, limit):
-    return f'{float_number: .{limit}f}'
+    return f'{float_number:.{limit}f}'

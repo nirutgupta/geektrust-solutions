@@ -3,7 +3,6 @@ from src.models.stock import Stock
 from src.services.fund_manager import MutualFundManager
 from src.utils.constants import ROUND_PERCENT_TO_DECIMAL_PLACES, FUND_NOT_FOUND_ERROR, EXCLUDE_OVERLAP_PERCENT
 from src.utils.exceptions import FundNotFoundException
-from src.mutual_funds.helpers import stocks_overlap_between
 from src.utils.helpers import limit_float_decimal_points
 
 
@@ -30,6 +29,6 @@ class MutualFundManagerImpl(MutualFundManager):
     def calculate_overlap(self, fund_name1, fund_name2):
         fund1 = self._dao.get_mutual_fund(fund_name1)
         fund2 = self._dao.get_mutual_fund(fund_name2)
-        stock_overlap_percent = stocks_overlap_between(fund1, fund2)
-        if stock_overlap_percent != EXCLUDE_OVERLAP_PERCENT:
-            print(f"{fund_name1} {fund_name2} {limit_float_decimal_points(stock_overlap_percent, ROUND_PERCENT_TO_DECIMAL_PLACES)}%")
+        overlap_percent = fund1.overlap(fund2)
+        if overlap_percent != EXCLUDE_OVERLAP_PERCENT:
+            print(f"{fund_name1} {fund_name2} {limit_float_decimal_points(overlap_percent, ROUND_PERCENT_TO_DECIMAL_PLACES)}%")

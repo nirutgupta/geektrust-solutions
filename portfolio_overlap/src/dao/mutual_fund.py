@@ -9,6 +9,9 @@ from src.utils.constants import STOCK_DATA_URL, STOCK_DATA_FUNDS_ROOT_KEY, STOCK
 
 
 class MutualFundDao:
+    """
+    Singleton class to add/get/update mutual funds
+    """
     __instance = None
 
     def __init__(self):

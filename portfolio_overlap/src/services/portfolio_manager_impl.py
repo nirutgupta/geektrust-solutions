@@ -11,4 +11,3 @@ class PortfolioManagerImpl(PortfolioManager):
 
     def get_current_portfolio(self):
         return self._dao.get_portfolio()
-

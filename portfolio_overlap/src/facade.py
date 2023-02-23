@@ -9,8 +9,11 @@ class PortfolioOverlapFacade:
         self.portfolio_manager = PortfolioManagerImpl()
         self.fund_manager = MutualFundManagerImpl()
 
-    def current_portfolio(self, args):
-        self.portfolio_manager.current_portfolio(args)
+    def current_portfolio(self, *args):
+        mutual_fund_names = []
+        for arg in args:
+            mutual_fund_names.append(arg)
+        self.portfolio_manager.current_portfolio(mutual_fund_names)
 
     def calculate_overlap(self, fund_name):
         try:
@@ -21,5 +24,5 @@ class PortfolioOverlapFacade:
             for portfolio_fund_name in self.portfolio_manager.get_current_portfolio():
                 self.fund_manager.calculate_overlap(fund_name, portfolio_fund_name)
 
-    def add_stock(self, fund_name, stock_name):
-        self.fund_manager.add_stock(fund_name, stock_name)
+    def add_stock(self, fund_name, *stock_name_args):
+        self.fund_manager.add_stock(fund_name, " ".join(stock_name_args))
