@@ -1,9 +1,4 @@
-from enum import Enum
-
-
-class TopUpDeviceCategory(Enum):
-    FOUR_DEVICE = 1
-    TEN_DEVICE = 2
+from src.enums.device_category import TopUpDeviceCategory
 
 
 class TopUp:

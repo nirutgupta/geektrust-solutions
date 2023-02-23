@@ -1,15 +1,9 @@
 import abc
 
 from abc import abstractmethod
-from enum import Enum
 
-from src.models.streaming_categories import StreamingCategory
-
-
-class PlanType(Enum):
-    FREE = 1
-    PERSONAL = 2
-    PREMIUM = 3
+from src.enums.plan_type import PlanType
+from src.enums.streaming_category import StreamingCategory
 
 
 class IPlan(abc.ABC):

@@ -5,3 +5,10 @@ class InvalidDateException(Exception):
 class DuplicateTopUpException(Exception):
     pass
 
+
+class SubscriptionsNotFoundException(Exception):
+    pass
+
+
+class DuplicateSubscriptionException(Exception):
+    pass

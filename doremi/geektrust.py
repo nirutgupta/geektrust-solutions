@@ -1,6 +1,7 @@
 from sys import argv
 from src.services.subscriptions import SubscriptionsService
 
+EXPECTED_ARGS = 2
 
 def main():
     
@@ -15,22 +16,16 @@ def main():
     //Add your code here to process the input commands
     """
     subscription_service = SubscriptionsService()
-    if len(argv) != 2:
+    if len(argv) != EXPECTED_ARGS:
         raise Exception("File path not entered")
     file_path = argv[1]
     f = open(file_path, 'r')
     Lines = f.readlines()
     for line in Lines:
         command, *args = line.split()
-        if command == "START_SUBSCRIPTION":
-            subscription_service.start_subscription(*args)
-        elif command == "ADD_SUBSCRIPTION":
-            subscription_service.add_subscription(*args)
-        elif command == "ADD_TOPUP":
-            subscription_service.add_topup(*args)
-        else:
-            subscription_service.print_renewal_details()
+        func = getattr(subscription_service, command.lower())
+        func(*args)
 
-    
+
 if __name__ == "__main__":
     main()

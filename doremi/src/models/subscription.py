@@ -8,17 +8,13 @@ class Subscription:
 
     def __init__(self, start_date, plan):
         self.__plan: Plan = plan
-        self.start_date = start_date
+        if not validate_date(start_date):
+            raise InvalidDateException()
+        self.__start_date = start_date
 
     @property
     def start_date(self):
         return self.__start_date
-
-    @start_date.setter
-    def start_date(self, value):
-        if not validate_date(value):
-            raise InvalidDateException()
-        self.__start_date = value
 
     @property
     def plan(self):

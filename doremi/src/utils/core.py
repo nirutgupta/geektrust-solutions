@@ -21,7 +21,3 @@ def get_renewal_reminder_date(date, timedelta_in_months) -> str:
         # return str(new_date)
     except ValueError:
         return ""
-
-
-if __name__ == '__main__':
-    print(get_renewal_reminder_date("05-02-2022", 5))
