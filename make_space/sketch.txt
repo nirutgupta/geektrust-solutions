@@ -1,0 +1,37 @@
+Models
+
+meeting_room
+    capacity
+    name
+
+Timeformat hh:mm (if incorrect -> incorrect_input)
+
+BufferTimes:
+    [] time range
+
+Time range
+    start
+    end
+
+meeting_room_bookings
+    meeting_room_to_bookings = {}
+
+booking
+    time range
+    capacity
+    meeting_room
+
+vacancy
+
+
+chain of responsibility
+
+MeetingRoomCalendar
+
+meeting_rooms = C-Cave(D-Tower(G-Mansion()))
+
+D-Tower
+
+G-Mansion
+
+
